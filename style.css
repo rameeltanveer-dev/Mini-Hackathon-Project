@@ -1,9 +1,9 @@
-
+/* Global Reset and Variables */
 :root {
-    --primary-color: #B88E2F;
+    --primary-color: #B88E2F; /* Goldish-brown color */
     --text-dark: #333333;
     --text-light: #666666;
-    --background-light: #FCF8F3; 
+    --background-light: #FCF8F3; /* Light beige/off-white */
     --spacing: 20px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; 
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins font added for modern look */
     color: var(--text-dark);
 }
 
@@ -41,7 +41,7 @@ p {
     color: var(--text-light);
 }
 
-
+/* --- Utility Classes (Buttons) --- */
 .btn {
     padding: 12px 25px;
     text-decoration: none;
@@ -59,7 +59,7 @@ p {
 }
 
 .primary-btn:hover {
-    background-color: #a07a21; 
+    background-color: #a07a21; /* Slightly darker */
 }
 
 .secondary-btn {
@@ -77,7 +77,9 @@ p {
     text-align: center;
 }
 
-
+/* ============================ */
+/* 1. HEADER SECTION */
+/* ============================ */
 .header {
     padding: 20px 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
@@ -100,7 +102,7 @@ p {
     font-weight: bold;
 }
 
-
+/* Desktop Navigation */
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -119,15 +121,19 @@ p {
 }
 
 .header-icons {
+    /* अब header-icons के अंदर nav-toggle भी है, यह सुनिश्चित करता है कि सब एक पंक्ति में रहें */
     display: flex;
     align-items: center;
 }
 
 .header-icons a {
     color: var(--text-dark);
+    /* आइकनों के बीच का स्पेस */
     margin-left: 20px; 
     font-size: 1.2rem;
 }
+
+/* ✅ Hamburger Icon: Desktop पर छिपा हुआ */
 .nav-toggle {
     display: none; 
     background: none;
@@ -136,8 +142,14 @@ p {
     cursor: pointer;
     color: var(--text-dark);
     padding: 0;
+    /* कार्ट आइकन के बगल में स्पेस */
     margin-left: 20px; 
 }
+
+
+/* ============================ */
+/* 2. HERO SECTION */
+/* ============================ */
 .hero-section {
     background-image: url('hero-banner-bg.jpg'); /* अपनी इमेज का URL यहाँ बदलें */
     background-size: cover;
@@ -155,7 +167,7 @@ p {
     width: 450px;
     max-width: 90%;
     border-radius: 10px;
-    margin-right: 50px; 
+    margin-right: 50px; /* Right offset for the box */
 }
 
 .hero-text-box span {
@@ -177,6 +189,10 @@ p {
 .hero-text-box p {
     margin-bottom: 25px;
 }
+
+/* ============================ */
+/* 3. BROWSE THE RANGE */
+/* ============================ */
 .browse-range-section {
     padding: 50px 0;
     text-align: center;
@@ -215,6 +231,10 @@ p {
     font-size: 1.2rem;
     color: var(--text-dark);
 }
+
+/* ============================ */
+/* 4. OUR PRODUCTS SECTION */
+/* ============================ */
 .products-section {
     padding: 50px 0;
     background-color: var(--background-light);
@@ -294,13 +314,14 @@ p {
 }
 
 .sale-badge {
-    background-color: #E97171; 
+    background-color: #E97171; /* Reddish */
 }
 
 .new-badge {
-    background-color: #2EC1AC; 
+    background-color: #2EC1AC; /* Greenish */
 }
 
+/* Hover Overlay */
 .product-overlay {
     position: absolute;
     top: 0;
@@ -327,6 +348,9 @@ p {
     margin-bottom: 10px;
 }
 
+/* ============================ */
+/* 5. INSPIRATION SECTION */
+/* ============================ */
 .inspiration-section {
     padding: 50px 0;
     background-color: var(--background-light); /* Added background for visual separation */
@@ -410,6 +434,10 @@ p {
     font-size: 14px;
     cursor: pointer;
 }
+
+/* ============================ */
+/* 6. INSTAGRAM GALLERY SECTION */
+/* ============================ */
 .furniture-gallery-section {
     padding: 50px 0;
     text-align: center;
@@ -432,6 +460,8 @@ p {
     height: 100%;
     object-fit: cover;
 }
+
+/* Grid Area Customizations based on HTML structure */
 .img-tall {
     grid-row: span 2; 
 }
@@ -439,6 +469,11 @@ p {
 .img-wide {
     grid-column: span 2; 
 }
+
+
+/* ============================ */
+/* 7. FOOTER SECTION */
+/* ============================ */
 .footer {
     border-top: 1px solid #f0f0f0;
     padding-top: 50px;
@@ -516,6 +551,72 @@ p {
     color: var(--text-dark);
     font-size: 0.9rem;
 }
+
+/* ============================ */
+/* MEDIA QUERIES (Responsiveness) */
+/* ============================ */
+@media (max-width: 1024px) {
+    /* --- Header for Mobile/Tablet --- */
+    
+    .main-nav {
+        /* Mobile: Hide the main nav links by default */
+        display: none; 
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding: 10px 0;
+    }
+    
+    .main-nav.active {
+        display: block; /* Show menu when active class is applied via JS */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ✅ टॉगल बटन को इस ब्रेकपॉइंट पर दिखाएं */
+    .nav-toggle {
+        display: block; 
+    }
+    
+    /* header-icons के अंदर टॉगल बटन को ठीक से स्पेस करें */
+    .header-icons .nav-toggle {
+        /* कार्ट आइकन के बगल में मार्जिन */
+        margin-left: 20px; 
+    }
+
+
+    .header-container {
+        /* यह सुनिश्चित करता है कि logo और icons (toggle सहित) एक पंक्ति में रहें */
+        justify-content: space-between;
+    }
+    
+    .hero-text-box {
+        margin-right: 0;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 1024px से नीचे 2 कॉलम */
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 लेआउट */
+    }
+}
+
 @media (max-width: 768px) {
     
     .logo {
@@ -573,18 +674,18 @@ p {
     }
     
     .instagram-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr); /* 3 कॉलम का ग्रिड */
         grid-template-rows: repeat(auto-fit, 150px);
     }
     
-    
+    /* Reset complex grid spans for simplicity on mobile */
     .instagram-grid img {
         grid-row: span 1 !important;
         grid-column: span 1 !important;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* सिंगल कॉलम */
         text-align: center;
     }
     
@@ -595,4 +696,4 @@ p {
     .newsletter-form {
         justify-content: center;
     }
-  }
+}
