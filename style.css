@@ -1,12 +1,12 @@
-
+/* Global Reset and Variables */
 :root {
-    --primary-color: #B88E2F; 
+    --primary-color: #B88E2F; /* Goldish-brown color */
     --text-dark: #333333;
     --text-light: #666666;
-    --background-light: #FCF8F3; 
-    --hero-box-color: #FFF3E0;
-    --hero-heading-color: #4A3E30; 
-    --hero-button-color: #A38865; 
+    --background-light: #FCF8F3; /* Light beige/off-white */
+    --hero-box-color: #FFF3E0; /* Custom light color for the hero text box based on the image */
+    --hero-heading-color: #4A3E30; /* Darker brown for hero heading text */
+    --hero-button-color: #A38865; /* Beige/brown for hero button */
     --spacing: 20px;
 }
 
@@ -43,6 +43,8 @@ p {
     line-height: 1.6;
     color: var(--text-light);
 }
+
+/* --- Utility Classes (Buttons) --- */
 .btn {
     padding: 12px 25px;
     text-decoration: none;
@@ -60,7 +62,7 @@ p {
 }
 
 .primary-btn:hover {
-    background-color: #a07a21; 
+    background-color: #a07a21; /* Slightly darker */
 }
 
 .secondary-btn {
@@ -77,6 +79,10 @@ p {
 .text-center {
     text-align: center;
 }
+
+/* ============================ */
+/* 1. HEADER SECTION */
+/* ============================ */
 .header {
     padding: 20px 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
@@ -98,6 +104,8 @@ p {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* Desktop Navigation */
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -125,6 +133,8 @@ p {
     margin-left: 20px; 
     font-size: 1.2rem;
 }
+
+/* Hamburger Icon: Desktop पर छिपा हुआ */
 .nav-toggle {
     display: none; 
     background: none;
@@ -135,28 +145,42 @@ p {
     padding: 0;
     margin-left: 20px; 
 }
+
+
+/* ============================ */
+/* 2. HERO SECTION - FINAL UPDATED */
+/* ============================ */
 .hero-section {
+    /* Background image URL updated to your link 1 */
     background-image: url('https://dl.dropboxusercontent.com/scl/fi/plxrkgk5xv4mfhi4a669v/IMG_20251117_021502_304.jpg?rlkey=8tz6lbg5ew1hs8o1icvwwpa19&st=3pxs0ux3'); 
     background-size: cover;
     background-position: center;
     height: 600px;
+    /* flex-end की जगह अब container/content box को align करेंगे */
     display: flex;
     align-items: center;
     margin-bottom: 50px;
 }
 
 .hero-content {
+    /* Make the container full width and use flex to position the box on the right */
     width: 100%;
+    /* Container padding removed to allow the text box to touch the right edge of the viewport */
     padding: 0; 
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end; /* Push the box to the right */
+    /* Container ki max-width ko hatakar full width lein agar pure screen par effect chahiye */
+}
 
 .hero-text-box {
+    /* Background color changed to match the image (Custom color) */
     background-color: var(--hero-box-color); 
     padding: 40px;
     width: 450px;
     max-width: 90%;
+    /* Right side border-radius hata diya taaki edge ko touch kare */
     border-radius: 10px 0 0 10px; 
+    /* margin-right हटा दिया ताकि यह viewport के right side से चिपका रहे */
     margin-right: 0; 
     
     color: var(--text-dark); 
@@ -164,6 +188,7 @@ p {
 }
 
 .hero-text-box span {
+    /* 'New Arrival' style */
     color: var(--text-dark); 
     font-size: 1rem;
     font-weight: 500;
@@ -175,6 +200,7 @@ p {
 
 .hero-text-box h2 {
     font-size: 3rem;
+    /* Heading color matching the image */
     color: var(--hero-heading-color); 
     margin-bottom: 15px;
     text-align: left;
@@ -186,6 +212,8 @@ p {
     color: var(--text-light);
     margin-bottom: 25px;
 }
+
+/* Hero section button style override */
 .hero-text-box .primary-btn {
     background-color: var(--hero-button-color); 
     color: white;
@@ -195,6 +223,11 @@ p {
 .hero-text-box .primary-btn:hover {
     background-color: #8C7456; 
 }
+
+
+/* ============================ */
+/* 3. BROWSE THE RANGE */
+/* ============================ */
 .browse-range-section {
     padding: 50px 0;
     text-align: center;
@@ -222,7 +255,7 @@ p {
 
 .category-item img {
     border-radius: 10px;
-    width: 350px; 
+    width: 350px; /* Max width constraint */
     height: 300px; 
     object-fit: cover;
     margin-bottom: 10px;
@@ -233,6 +266,10 @@ p {
     font-size: 1.2rem;
     color: var(--text-dark);
 }
+
+/* ============================ */
+/* 4. OUR PRODUCTS SECTION */
+/* ============================ */
 .products-section {
     padding: 50px 0;
     background-color: var(--background-light);
@@ -245,7 +282,7 @@ p {
 }
 
 .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 कॉलम */
     display: grid;
     gap: 30px;
     margin-bottom: 40px;
@@ -312,12 +349,14 @@ p {
 }
 
 .sale-badge {
-    background-color: #E97171; 
+    background-color: #E97171; /* Reddish */
 }
 
 .new-badge {
-    background-color: #2EC1AC; 
+    background-color: #2EC1AC; /* Greenish */
 }
+
+/* Hover Overlay */
 .product-overlay {
     position: absolute;
     top: 0;
@@ -343,6 +382,10 @@ p {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
+
+/* ============================ */
+/* 5. INSPIRATION SECTION */
+/* ============================ */
 .inspiration-section {
     padding: 50px 0;
     background-color: var(--background-light); 
@@ -426,6 +469,10 @@ p {
     font-size: 14px;
     cursor: pointer;
 }
+
+/* ============================ */
+/* 6. INSTAGRAM GALLERY SECTION */
+/* ============================ */
 .furniture-gallery-section {
     padding: 50px 0;
     text-align: center;
@@ -448,6 +495,8 @@ p {
     height: 100%;
     object-fit: cover;
 }
+
+/* Grid Area Customizations based on HTML structure */
 .img-tall {
     grid-row: span 2; 
 }
@@ -455,6 +504,11 @@ p {
 .img-wide {
     grid-column: span 2; 
 }
+
+
+/* ============================ */
+/* 7. FOOTER SECTION */
+/* ============================ */
 .footer {
     border-top: 1px solid #f0f0f0;
     padding-top: 50px;
@@ -532,9 +586,15 @@ p {
     color: var(--text-dark);
     font-size: 0.9rem;
 }
+
+/* ============================ */
+/* MEDIA QUERIES (Responsiveness) */
+/* ============================ */
 @media (max-width: 1024px) {
+    /* --- Header for Mobile/Tablet --- */
     
     .main-nav {
+        /* Mobile: Hide the main nav links by default */
         display: none; 
         position: absolute;
         top: 80px; 
@@ -547,7 +607,7 @@ p {
     }
     
     .main-nav.active {
-        display: block; 
+        display: block; /* Show menu when active class is applied via JS */
     }
 
     .main-nav ul {
@@ -561,18 +621,27 @@ p {
         padding: 10px 0;
         border-bottom: 1px solid #f0f0f0;
     }
+
+    /* टॉगल बटन को इस ब्रेकपॉइंट पर दिखाएं */
     .nav-toggle {
         display: block; 
     }
+    
+    /* header-icons के अंदर टॉगल बटन को ठीक से स्पेस करें */
     .header-icons .nav-toggle {
+        /* कार्ट आइकन के बगल में मार्जिन */
         margin-left: 20px; 
     }
 
 
     .header-container {
+        /* यह सुनिश्चित करता है कि logo और icons (toggle सहित) एक पंक्ति में रहें */
         justify-content: space-between;
     }
+    
+    /* Media Query Hero Section Fix */
     .hero-content {
+        /* Re-apply max-width container here if needed, but remove padding */
         max-width: 1240px; 
         margin: 0 auto;
         padding: 0;
@@ -584,11 +653,11 @@ p {
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr); /* 1024px से नीचे 2 कॉलम */
     }
     
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2x2 लेआउट */
     }
 }
 
@@ -600,6 +669,7 @@ p {
     
     .hero-section {
         height: 500px;
+        /* Box ko center mein le aayein for better mobile view */
         justify-content: center; 
     }
 
@@ -608,7 +678,7 @@ p {
         margin-left: auto;
         margin-right: auto;
         padding: 25px;
-        border-radius: 10px; 
+        border-radius: 10px; /* Mobile par poore corners gol kar dein */
     }
 
     .hero-text-box h2 {
@@ -624,7 +694,7 @@ p {
     }
 
     .products-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* मोबाइल पर सिंगल कॉलम */
     }
 
     .inspiration-container {
@@ -650,18 +720,18 @@ p {
     }
     
     .instagram-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr); /* 3 कॉलम का ग्रिड */
         grid-template-rows: repeat(auto-fit, 150px);
     }
     
-    
+    /* Reset complex grid spans for simplicity on mobile */
     .instagram-grid img {
         grid-row: span 1 !important;
         grid-column: span 1 !important;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* सिंगल कॉलम */
         text-align: center;
     }
     
@@ -672,3 +742,5 @@ p {
     .newsletter-form {
         justify-content: center;
     }
+    }
+    
