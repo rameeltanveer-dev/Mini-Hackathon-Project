@@ -15,7 +15,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.logo img{
+    max-width:100px;
+    height:auto;}
 body {
     font-family: 'Poppins', Arial, sans-serif;
     color: var(--text-dark);
